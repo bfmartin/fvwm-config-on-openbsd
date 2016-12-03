@@ -1,0 +1,225 @@
+#################################################################
+#
+# A configuration file for FVWM.
+#
+#################################################################
+# FvwmButtons
+
+# start FvwmButtons and restart them
+AddToFunc "InitFunction" "I" Module FvwmButtons
++		"I" Next [!iconic CurrentScreen xterm] Focus
++		"I" CursorMove 30 40
+
+AddToFunc "RestartFunction" "I" Module FvwmButtons
++		"I" Next [!iconic CurrentScreen xterm] Focus
++		"I" CursorMove 30 40
+
+*FvwmButtonsFore Black
+*FvwmButtonsBack SteelBlue3
+*FvwmButtonsFont -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
+*FvwmButtonsGeometry 300x50-0-0
+*FvwmButtonsRows 1
+
+*FvwmButtons(Swallow XClock 'Exec xclock -padding 0 -fg white -bg SteelBlue3 &')
+*FvwmButtons(Swallow(UseOld,NoKill) "xload" `Exec xload -title xload -bg SteelBlue3 -update 3 -nolabel &`)
+*FvwmButtons(1x1 Frame 0 Swallow(UseOld) "FvwmPager" "Module FvwmPager 0 1")
+
+##############################################################################
+# Mouse menus
+#
+
+# This is the command menu for the left mouse button
+AddToMenu CommandMenu "Command Menu"  Title
++	"Xterm"			exec xterm &
++	"Firefox"		exec firefox &
++       "File manager"		exec xfe &
++       "Keepassx"              exec keepassx &
++       "Calculator"            exec xcalc &
++       "Screenshot"		exec shutterbug &
++       "Volume Control"        Popup VolumeMenu
++	"" 			Nop
++	"Restart Fvwm2"		Restart fvwm
++	"Lock Screen"		exec xlock &
++ 	"Reboot"		FvwmForm RebootVerify
++ 	"Shutdown"		FvwmForm ShutdownVerify
++ 	"Logout"		FvwmForm QuitVerify
+
+# Window operations for the centre mouse button
+AddToMenu Global-Window-Ops    "Window Ops"    Title
++       "Move"          Move-or-Raise2
++       "Resize"        Resize-or-Raise2
++       "Raise"         Raise
++       "Lower"         Lower
++       "(De)Iconify"   Iconify
++       "(Un)Stick"     Stick
++       "(Un)Maximize"  maximize_func
++       ""              Nop
++       "Delete"        Delete
++       "Close"         Close
++       "Destroy"       Destroy
++       ""              Nop
++       "Refresh Screen" Refresh
+
+# Window Ops for the top left of every window
+AddToMenu Window-Ops   "Move"          Move-or-Raise
++       "Resize"        Resize-or-Raise
++       "Raise/Lower"   RaiseLower
++       "Iconify"       Iconify
++       "(Un)Stick"     Stick
++       ""              Nop
++       "Delete"        Delete
++       "Close"         Close
++       "Destroy"       Destroy
+
+AddToMenu VolumeMenu  "Volume Control"  Title
++       "Volume 100%%"          exec mixerctl -q outputs.master=255
++       "Volume  90%%"          exec mixerctl -q outputs.master=230
++       "Volume  80%%"          exec mixerctl -q outputs.master=205
++       "Volume  70%%"          exec mixerctl -q outputs.master=180
++       "Volume  60%%"          exec mixerctl -q outputs.master=155
++       "Volume  50%%"          exec mixerctl -q outputs.master=130
++       "Volume  40%%"          exec mixerctl -q outputs.master=105
++       "Volume  30%%"          exec mixerctl -q outputs.master=80
++       "Volume  20%%"          exec mixerctl -q outputs.master=55
++       "Volume  10%%"          exec mixerctl -q outputs.master=20
++       "Volume   0%%"          exec mixerctl -q outputs.master=0
+
+############################################################################
+# menus and mouse actions
+#
+
+AddToFunc Move-or-Raise		"I" Raise
++				"M" Move
++				"D" Lower
+
+AddToFunc Move-or-Raise2        "M" Raise
++				"M" Move
++				"D" Lower
+
+AddToFunc Maximize-Func         "C" Maximize     100 100
+
+AddToFunc Move-or-Iconify       "I" Raise
++                               "M" Move
++                               "D" Iconify
+
+AddToFunc Resize-or-Raise       "I" Raise
++                               "M" Resize
++                               "D" Lower
+
+AddToFunc Resize-or-Raise2      "M" Raise
++                               "M" Resize
++                               "D" Lower
+
+AddToFunc Iconify-and-Raise     "I" Iconify
++                               "I" Raise
+
+############################################################################
+# MOUSE Setup
+#
+# root window:
+# - Left Mouse Button brings up the Command Menu
+# - Centre Mouse Button is the window operations list
+# - Right Mouse Button is a window list
+#     Button	Context Modifi 	Function
+Mouse 1		R   	A       Menu CommandMenu Nop
+Mouse 2		R    	A       Menu Global-Window-Ops Nop
+Mouse 3		R    	A      	WindowList
+
+# Now, title bar buttons
+# Left is menu, right is minimise, maximise, close
+#     Button	Context Modifi 	Function
+Mouse 0		1       A       Menu Window-Ops Close
+Mouse 0		2    	A     	Close
+Mouse 0		4    	A     	Maximize-Func
+Mouse 0		6    	A     	Iconify
+
+# Button 1 in Frame or Sides is a resize-or-raise, in Icons is a move or 
+# de-iconify, and on Top does a move-or-raise
+#     Button	Context Modifi 	Function
+Mouse 1 	FS      A       Resize-or-Raise
+Mouse 1		I       A       Move-or-Iconify
+Mouse 1		T       A       Move-or-Raise
+
+# Button 2 in an Icon is de-iconify, in Corners/Sides/Titlebar gets Ops Menu
+#     Button	Context Modifi 	Function
+#Mouse 2 	I       A       Iconify
+#Mouse 2 	FST     A       Menu Window-Ops Nop
+# Button 3 does a raise-lower on anything
+#Mouse 3 	TSIF    A       RaiseLower
+
+############################################################################
+# "are you sure?" for logout, reboot, and shutdown
+
+*QuitVerifyGrabServer
+*QuitVerifyWarpPointer
+*QuitVerifyCommand  Beep
+*QuitVerifyLine          center
+*QuitVerifyText          "Do you really want to logout?"
+*QuitVerifyLine          expand
+*QuitVerifyButton   quit      "Logout"  ^M
+*QuitVerifyCommand  Quit
+*QuitVerifyButton   quit      "Cancel"  ^[
+*QuitVerifyCommand  Nop
+Style "QuitVerify" NoTitle, NoHandles, BorderWidth 3
+
+*RebootVerifyGrabServer
+*RebootVerifyWarpPointer
+*RebootVerifyCommand  Beep
+*RebootVerifyLine          center
+*RebootVerifyText          "Do you really want to reboot?"
+*RebootVerifyLine          expand
+*RebootVerifyButton   quit      "Reboot"  ^M
+*RebootVerifyCommand  exec doas /sbin/reboot
+*RebootVerifyButton   quit      "Cancel"  ^[
+*RebootVerifyCommand  Nop
+Style "RebootVerify" NoTitle, NoHandles, BorderWidth 3
+
+*ShutdownVerifyGrabServer
+*ShutdownVerifyWarpPointer
+*ShutdownVerifyCommand  Beep
+*ShutdownVerifyLine          center
+*ShutdownVerifyText          "Do you really want to shutdown?"
+*ShutdownVerifyLine          expand
+*ShutdownVerifyButton   quit      "Shutdown"  ^M
+*ShutdownVerifyCommand  exec doas /sbin/shutdown -hp now
+*ShutdownVerifyButton   quit      "Cancel"  ^[
+*ShutdownVerifyCommand  Nop
+Style "ShutdownVerify" NoTitle, NoHandles, BorderWidth 3
+
+############################################################################
+# COLORS and FONTS and Styles
+#
+# window in focus
+HilightColor		linen Red3
+
+# all other windows 
+Style "*" Color linen/SteelBlue3
+
+# fonts for title bar and icon label
+WindowFont              -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
+IconFont                -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
+
+# icons go in bottom left
+Style "*" IconBox 0 1030 750 1550
+
+# Keep the last focus while in root window
+Style "*" SloppyFocus
+
+# windows auto-raise after these many milliseconds
+Module FvwmAuto 300
+
+# down and up in less than these milliseconds to be considered a click
+ClickTime 250
+
+# opaque moves
+OpaqueMoveSize 100
+
+# Suppress the pager 
+DeskTopSize 1 1
+
+# window placement
+Style "*" SmartPlacement
+Style "*" RandomPlacement
+
+# window styles
+Style "Fvwm*"		NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 0
