@@ -7,7 +7,6 @@
 DIR=dotfiles
 
 # are we sure?
-# if [ $# > 1 -a "y$1" = 'y-y' ]; then
 if [ $# -gt 0 -a "y$1" = 'y-y' ]; then
 
   # sure
