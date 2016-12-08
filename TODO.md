@@ -36,10 +36,6 @@ This will make it easier to automate with admin tools like Puppet or Ansible and
 
 Not much there now.
 
-## Start cwm Instead
-
-An option to change window managers. Sometimes better keyboard support is needed.
-
 ## Double Click on Window Title Bar
 
 This should be maximise / unmaximise. Now it is raise / lower the window.

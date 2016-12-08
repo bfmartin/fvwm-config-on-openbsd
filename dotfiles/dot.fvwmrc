@@ -39,6 +39,7 @@ AddToMenu CommandMenu "Command Menu"  Title
 +       "Volume Control"        Popup VolumeMenu
 +	"" 			Nop
 +	"Restart Fvwm2"		Restart fvwm
++       "Start cwm"             Restart cwm
 +	"Lock Screen"		exec xlock &
 + 	"Reboot"		FvwmForm RebootVerify
 + 	"Shutdown"		FvwmForm ShutdownVerify
