@@ -8,10 +8,6 @@ In no particular order:
 
 Better inline documentation for evaluating choices and what sections apply to which functionality.
 
-## Close Window Button
-
-At the top right of windows are the minimise / maximise / close buttons. Make them look like they should. Put an X on the close button at least.
-
 ## Volume Control Slider
 
 Replace the eleven menu options with a volume control slider for better control and granularity.
