@@ -52,7 +52,7 @@ install -m 0755 dotfiles/dot.xsession  ~/.xsession
 
 ### Reboot and Shutdown (Optional)
 
-For the shutdown and reboot commands to work, your account needs password-less root privileges using doas. Something like this in the /etc/doas.conf file should work:
+For the shutdown and reboot commands to work, your account needs password-less root privileges using doas. Something like this in the /etc/doas.conf file should work (assuming your account is in the wheel group):
 
 ~~~
 permit nopass :wheel as root cmd /sbin/reboot
