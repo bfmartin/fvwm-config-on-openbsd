@@ -1,6 +1,6 @@
 # TODO
 
-The following items are outstanding. Most are feasible, some may not be.
+The following items are outstanding. Some are feasible, some are likely not.
 
 In no particular order:
 
@@ -10,7 +10,7 @@ Better inline documentation for evaluating choices and what sections apply to wh
 
 ## Volume Control Slider
 
-Replace the eleven menu options with a volume control slider for better control and granularity.
+Replace the eleven menu options with a volume control slider for better control and granularity. This is not high on my priority list as the hardware buttons work fine on my laptop
 
 ## Switch Windows with Alt-Tab
 
@@ -48,4 +48,4 @@ There is a screen locker installed on the command menu (left mouse button), but 
 
 ## xclock Core Dump
 
-A file called xclock.core occasionally shows up in my home dir, maybe from shutting down improperly. What's the cause?
+A file called xclock.core occasionally shows up in my home dir. What's the cause? And how to fix it?
