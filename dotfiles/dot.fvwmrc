@@ -42,6 +42,7 @@ AddToMenu CommandMenu "Command Menu"  Title
 +       "Calculator"            exec xcalc &
 +       "Screenshot"		exec shutterbug &
 +       "Volume Control"        Popup VolumeMenu
++	"Xrandr"		exec xrandr
 +	"" 			Nop
 +	"Restart Fvwm2"		Restart fvwm
 +       "Start cwm"             Restart cwm
