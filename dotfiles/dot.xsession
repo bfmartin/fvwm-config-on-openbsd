@@ -8,6 +8,8 @@ if [ -d /usr/local/share/fonts ]; then
   xset fp rehash
 fi
 
+xidle -timeout 600 &
+
 # background
 xsetroot -solid black
 

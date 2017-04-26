@@ -44,10 +44,6 @@ Show a Windows Operations menu by right clicking on the border. Good for windows
 
 Show basic information using only stock OpenBSD tools. Something like Conky, where the information is refreshed periodically. Useful: battery, volume, and wireless information, maybe others as well.
 
-## Lock Screen
-
-There is a screen locker installed on the command menu (left mouse button), but there should be a lock screen after a period of inactivity. The screen blanks OK, but no lock.
-
 # BUGS
 
 ## xclock Core Dump
