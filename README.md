@@ -61,6 +61,16 @@ permit nopass :wheel as root cmd /sbin/shutdown args -hp now
 
 Since the last matching rule takes precedence, put these at the bottom of the file.
 
+### Lock Screen on Suspend (Optional)
+
+The .xsession file starts xidle, which locks the screen after 10 minutes of inactivity. It's a good idea to do this when suspending your laptop as well. Put the following into /etc/apm/suspend (and make it executable):
+
+~~~
+#!/bin/sh
+pkill -USR1 xidle
+~~~
+
+
 ### Other Packages (Optional)
 
 Make your desktop more complete with any or all of the tools you want:
