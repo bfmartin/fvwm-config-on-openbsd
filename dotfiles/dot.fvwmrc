@@ -37,10 +37,8 @@ AddToFunc "RestartFunction" "I" Module FvwmButtons
 AddToMenu CommandMenu "Command Menu"  Title
 +	"Xterm"			exec xterm &
 +	"Firefox"		exec firefox &
-+       "File manager"		exec xfe &
-+       "Keepassx"              exec keepassx &
++	"Chrome"		exec chrome &
 +       "Calculator"            exec xcalc &
-+       "Screenshot"		exec shutterbug &
 +       "Volume Control"        Popup VolumeMenu
 +	"Xrandr"		exec xrandr
 +	"" 			Nop
