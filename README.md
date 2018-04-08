@@ -26,7 +26,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 ## Requirements
 
-OpenBSD 6.2 and its bundled FVWM. This was developed on OpenBSD/amd64 6.2 (and 6.0 - 6.1) and FVWM version 2.2.5. Other versions may work as well.
+OpenBSD 6.3 and its bundled FVWM. This was developed on OpenBSD/amd64 6.3 (and 6.0 - 6.2) and FVWM version 2.2.5. Other versions may work as well.
 
 No additional software beyond the base installation is required. Though see the Install section for suggestions.
 
@@ -85,11 +85,10 @@ Make your desktop more complete with any or all of the tools you want:
 * screen capture
 * screen saver
 * conky
-* whatever else you want
 
 
 ## Thanks
 
 Thanks to the many people who provided docs and example configurations.
 
-Your feedback and ideas are welcome.
+Feedback and ideas are always welcome.
