@@ -1,4 +1,4 @@
-v# TODO
+# TODO
 
 The following items are outstanding. Some are feasible, some are likely not.
 
