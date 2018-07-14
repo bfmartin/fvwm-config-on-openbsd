@@ -28,7 +28,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 OpenBSD 6.3 and its bundled FVWM. This was developed on OpenBSD/amd64 6.3 (and 6.0 - 6.2) and FVWM version 2.2.5. Other versions may work as well.
 
-No additional software beyond the base installation is required. Though see the Install section for suggestions.
+No additional software beyond the base installation is required.
 
 ## Install
 
@@ -69,23 +69,6 @@ The .xsession file starts xidle, which locks the screen after 10 minutes of inac
 #!/bin/sh
 pkill -USR1 xidle
 ~~~
-
-
-### Other Packages (Optional)
-
-Make your desktop more complete with any or all of the tools you want:
-
-* web browser
-* file manager
-* network connection manager
-* photo manager
-* image editing
-* audio and video player
-* password manager
-* screen capture
-* screen saver
-* conky
-
 
 ## Thanks
 
