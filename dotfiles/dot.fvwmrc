@@ -40,7 +40,6 @@ AddToMenu CommandMenu "Command Menu"  Title
 +	"Chrome"		exec chrome &
 +       "Calculator"            exec xcalc &
 +       "Volume Control"        Popup VolumeMenu
-+	"Xrandr"		exec xrandr
 +	"" 			Nop
 +	"Restart Fvwm2"		Restart fvwm
 +       "Start cwm"             Restart cwm
