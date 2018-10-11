@@ -6,6 +6,8 @@ This is an attempt at a nice desktop environment using stock OpenBSD apps.
 
 After finally getting a laptop that OpenBSD supports, I wanted a good desktop without installing a large window manager and dozens of its prerequisite packages. Plus I prefer the simplicity and correctness of what this OS provides. There's no reason to go elsewhere.
 
+![sample desktop screenshot](images/sample.jpg)
+
 ## Features
 
 * Clean, low-clutter desktop.
