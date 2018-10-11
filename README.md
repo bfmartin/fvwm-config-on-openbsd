@@ -12,7 +12,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 * Clean, low-clutter desktop.
 
-* Information displays in the lower right corner.
+* Information displays in the lower right corner (xclock, xload, and the FVWM pager).
 
 * Icons for minimised windows in the lower left corner.
 
