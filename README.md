@@ -65,7 +65,7 @@ Since the last matching rule takes precedence, put these at the bottom of the fi
 
 ### Lock Screen on Suspend (Optional)
 
-The .xsession file starts xidle, which locks the screen after 10 minutes of inactivity. It's a good idea to do this when suspending your laptop as well. Put the following into /etc/apm/suspend (and make it executable):
+The .xsession file starts xidle, which locks the screen after 10 minutes of inactivity. It's a good idea to lock the screen when suspending your laptop as well. Put the following into /etc/apm/suspend (and make it executable):
 
 ~~~
 #!/bin/sh
