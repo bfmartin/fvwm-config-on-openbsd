@@ -1,4 +1,5 @@
 PATH=/usr/X11R6/bin:/usr/local/bin:$PATH
+export LC_CTYPE="en_US.UTF-8"
 
 # remap the caps lock key to be another ctrl key
 setxkbmap \
