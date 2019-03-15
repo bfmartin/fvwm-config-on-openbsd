@@ -16,7 +16,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 * Icons for minimised windows in the lower left corner.
 
-* Mouse menus:
+* Mouse menus in root window:
 
   * Left button: Commands, log out, volume, lock screen, reboot, etc.
 
