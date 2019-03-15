@@ -4,7 +4,8 @@
 # into the user's home dir
 
 # source of the files
-DIR=dotfiles
+ME="$(readlink -f "$0")"
+DIR="$(dirname "$(dirname "$ME")")/dotfiles"
 
 # are we sure?
 if [ $# -gt 0 -a "y$1" = 'y-y' ]; then
