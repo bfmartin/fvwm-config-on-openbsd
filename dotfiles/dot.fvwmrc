@@ -173,7 +173,7 @@ Style "QuitVerify" NoTitle, NoHandles, BorderWidth 3
 *RebootVerifyText          "Do you really want to reboot?"
 *RebootVerifyLine          expand
 *RebootVerifyButton   quit      "Reboot"  ^M
-*RebootVerifyCommand  exec doas /sbin/reboot
+*RebootVerifyCommand  exec /usr/bin/doas /sbin/reboot
 *RebootVerifyButton   quit      "Cancel"  ^[
 *RebootVerifyCommand  Nop
 Style "RebootVerify" NoTitle, NoHandles, BorderWidth 3
@@ -185,7 +185,7 @@ Style "RebootVerify" NoTitle, NoHandles, BorderWidth 3
 *ShutdownVerifyText          "Do you really want to shutdown?"
 *ShutdownVerifyLine          expand
 *ShutdownVerifyButton   quit      "Shutdown"  ^M
-*ShutdownVerifyCommand  exec doas /sbin/shutdown -hp now
+*ShutdownVerifyCommand  exec /usr/bin/doas /sbin/shutdown -hp now
 *ShutdownVerifyButton   quit      "Cancel"  ^[
 *ShutdownVerifyCommand  Nop
 Style "ShutdownVerify" NoTitle, NoHandles, BorderWidth 3
