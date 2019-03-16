@@ -41,7 +41,7 @@ AddToMenu CommandMenu "Command Menu"  Title
 +       "Calculator"            exec xcalc &
 +       "Volume Control"        Popup VolumeMenu
 +	"" 			Nop
-+	"Restart Fvwm2"		Restart fvwm
++	"Restart fvwm"		Restart fvwm
 +       "Start cwm"             Restart cwm
 +	"Lock Screen"		exec xlock &
 + 	"Reboot"		FvwmForm RebootVerify
