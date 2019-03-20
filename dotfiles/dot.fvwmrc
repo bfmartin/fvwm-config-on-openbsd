@@ -92,9 +92,10 @@ AddToMenu VolumeMenu  "Volume Control"  Title
 # menus and mouse actions
 #
 
+# this is for the titlebar. double-click to maximise / minimise
 AddToFunc Move-or-Raise		"I" Raise
 +				"M" Move
-+				"D" Lower
++				"D" Maximize
 
 AddToFunc Move-or-Raise2        "M" Raise
 +				"M" Move

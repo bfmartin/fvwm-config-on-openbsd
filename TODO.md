@@ -32,10 +32,6 @@ This will make it easier to automate with admin tools like Puppet or Ansible and
 
 Not much there now.
 
-## Double Click on Window Title Bar
-
-This should be maximise / unmaximise. Now it is raise / lower the window.
-
 ## Window Ops Menu by Clicking Window Border
 
 Show a Windows Operations menu by right clicking on the border. Good for windows slightly off the screen. An alternative to the middle button.
