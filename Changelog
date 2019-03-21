@@ -1,3 +1,9 @@
+Version 1.3.0 2019-03-20
+	- TODO list: switch windows with alt-Tab keys
+	- TODO list: double click on a window's titlebar is maximise/unmaximise
+	- TODO list: windows and icons will snap to each other
+	- TODO list: mouse button 2 on a window border shows window-ops menu
+
 Version 1.2.0 2016-12-19
 	- added different styles to close / minimise / maximise buttons
 	- added IconPath and PixmapPath variables, though commented out for now
