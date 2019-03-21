@@ -148,7 +148,7 @@ Mouse 1		T       A       Move-or-Raise
 # Button 2 in an Icon is de-iconify, in Corners/Sides/Titlebar gets Ops Menu
 #     Button	Context Modifi 	Function
 #Mouse 2 	I       A       Iconify
-#Mouse 2 	FST     A       Menu Window-Ops Nop
+Mouse 2 	FST     A       Menu Window-Ops Nop
 # Button 3 does a raise-lower on anything
 #Mouse 3 	TSIF    A       RaiseLower
 

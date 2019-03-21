@@ -32,10 +32,6 @@ This will make it easier to automate with admin tools like Puppet or Ansible and
 
 Not much there now.
 
-## Window Ops Menu by Clicking Window Border
-
-Show a Windows Operations menu by right clicking on the border. Good for windows slightly off the screen. An alternative to the middle button.
-
 ## Show Status Info
 
 Show basic information using only stock OpenBSD tools. Something like Conky, where the information is refreshed periodically. Useful: battery, volume, and wireless information, maybe others as well.
