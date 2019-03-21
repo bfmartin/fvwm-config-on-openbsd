@@ -235,3 +235,8 @@ AddButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x8
 AddButtonStyle 4 Vector 4 50x25@1 75x75@0 25x75@0 50x25@1
 # minimise button, to the left of the maximise button
 AddButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 50x75@0
+
+# make everything line up (snap) with each other. number is pixels proximity
+SnapAttraction 10
+# only snap windows:
+# SnapAttraction 10 Windows

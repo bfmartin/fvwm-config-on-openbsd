@@ -16,10 +16,6 @@ Replace the eleven menu options with a volume control slider for better control 
 
 Similar to other desktops. This page http://www.xteddy.org/fvwm/fvwmcookbookfaq.html#WC2 has a possible solution.
 
-## Align Windows
-
-Make the windows line up or snap when adjacent to other windows or the edge of a screen. The FVWM FAQ says how to accomplish this at http://www.fvwm.org/documentation/faq/#3.3
-
 ## System Wide Install
 
 The install script installs the dot files into your home dir. If you're like me, your laptop is a single-user system and there's no need for individual personalisations.
