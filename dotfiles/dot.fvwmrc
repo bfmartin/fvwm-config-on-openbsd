@@ -240,3 +240,8 @@ AddButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 50x75@0
 SnapAttraction 10
 # only snap windows:
 # SnapAttraction 10 Windows
+
+# alt-tabbing
+Key Tab A M Next (CurrentDesk !Iconic) Focus
+# alt-shift-tabbing to reverse
+# Key Tab A SM Prev (CurrentDesk !Iconic) Focus
