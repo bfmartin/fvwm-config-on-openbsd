@@ -28,7 +28,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 ## Requirements
 
-OpenBSD 6.6 and its bundled FVWM. This was developed on OpenBSD/amd64 6.6 (and 6.0 - 6.5) and FVWM version 2.2.5. Other versions may work as well.
+OpenBSD 6.7 and its bundled FVWM. This was developed on OpenBSD/amd64 6.7 (and 6.0 - 6.6) and FVWM version 2.2.5. Other versions may work as well.
 
 No additional software beyond the base installation is required.
 
