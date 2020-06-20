@@ -76,17 +76,17 @@ AddToMenu Window-Ops   "Move"          Move-or-Raise
 +       "Destroy"       Destroy
 
 AddToMenu VolumeMenu  "Volume Control"  Title
-+       "Volume 100%%"          exec mixerctl -q outputs.master=255
-+       "Volume  90%%"          exec mixerctl -q outputs.master=230
-+       "Volume  80%%"          exec mixerctl -q outputs.master=205
-+       "Volume  70%%"          exec mixerctl -q outputs.master=180
-+       "Volume  60%%"          exec mixerctl -q outputs.master=155
-+       "Volume  50%%"          exec mixerctl -q outputs.master=130
-+       "Volume  40%%"          exec mixerctl -q outputs.master=105
-+       "Volume  30%%"          exec mixerctl -q outputs.master=80
-+       "Volume  20%%"          exec mixerctl -q outputs.master=55
-+       "Volume  10%%"          exec mixerctl -q outputs.master=20
-+       "Volume   0%%"          exec mixerctl -q outputs.master=0
++       "Volume 100%%"          exec sndioctl -q output.level=1
++       "Volume  90%%"          exec sndioctl -q output.level=0.9
++       "Volume  80%%"          exec sndioctl -q output.level=0.8
++       "Volume  70%%"          exec sndioctl -q output.level=0.7
++       "Volume  60%%"          exec sndioctl -q output.level=0.6
++       "Volume  50%%"          exec sndioctl -q output.level=0.5
++       "Volume  40%%"          exec sndioctl -q output.level=0.4
++       "Volume  30%%"          exec sndioctl -q output.level=0.3
++       "Volume  20%%"          exec sndioctl -q output.level=0.2
++       "Volume  10%%"          exec sndioctl -q output.level=0.1
++       "Volume   0%%"          exec sndioctl -q output.level=0
 
 ############################################################################
 # menus and mouse actions
