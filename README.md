@@ -12,7 +12,7 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 * Clean, low-clutter desktop.
 
-* Information displays in the lower right corner (xclock, xload, and the FVWM pager).
+* Information displays in the lower right corner (xclock, xload, battery status, and the FVWM pager).
 
 * Icons for minimised windows in the lower left corner.
 
@@ -25,6 +25,12 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
   * Right button: Window List.
 
 * Works without installing extra software packages or ports.
+
+### Battery Status
+
+A new battery status indicator was added on 2020-07-06. The indicator shows percentage remaining and minutes remaining, as reported by the apm command. If the battery is not present, it shows 'unknown'.
+
+Feedback on this new feature is appreciated. It's been tested on my two laptops with different screen resolutions.
 
 ## Requirements
 

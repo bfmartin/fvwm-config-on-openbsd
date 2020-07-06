@@ -22,11 +22,12 @@ AddToFunc "RestartFunction" "I" Module FvwmButtons
 *FvwmButtonsFore Black
 *FvwmButtonsBack SteelBlue3
 *FvwmButtonsFont -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
-*FvwmButtonsGeometry 300x50-0-0
+*FvwmButtonsGeometry 400x50-0-0
 *FvwmButtonsRows 1
 
 *FvwmButtons(Swallow XClock 'Exec xclock -padding 0 -fg white -bg SteelBlue3 &')
 *FvwmButtons(Swallow(UseOld,NoKill) "xload" `Exec xload -title xload -bg SteelBlue3 -update 3 -nolabel &`)
+*FvwmButtons(Swallow swallow 'Exec xterm -font -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1 -title swallow +sb -bg SteelBlue3 -e "tput civis; while true; do echo -n Bat:; apm -l | perl -pe chomp ; echo \%; echo -n Min:; apm -m | perl -pe chomp; sleep 5; clear; done" &')
 *FvwmButtons(1x1 Frame 0 Swallow(UseOld) "FvwmPager" "Module FvwmPager 0 1")
 
 ##############################################################################
