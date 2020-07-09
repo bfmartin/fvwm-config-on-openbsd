@@ -26,6 +26,12 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
 * Works without installing extra software packages or ports.
 
+* The .xsession file adds these features:
+
+  * Remaps the Caps Lock key to be another Control key.
+
+  * Starts the xidle command, which locks the screen after 10 minutes of inactivity.
+
 ### Battery Status
 
 A new battery status indicator was added on 2020-07-06. The indicator shows percentage remaining and minutes remaining, as reported by the apm command. If the battery is not present, it shows 'unknown'.
