@@ -23,11 +23,3 @@ This will make it easier to automate with admin tools like Puppet or Ansible and
 ## Better Keyboard Support
 
 Not much there now.
-
-# BUGS
-
-## xclock Core Dump
-
-A file called xclock.core occasionally shows up in my home dir. What's the cause? And how to fix it?
-
-Note 1: This happens during development when selecting "Restart fvwm". That kills the xclock process and presumably causes the core dump (though no core dump for xload). This doesn't appear to be a bug with this init file so it will be removed from the bug list.
