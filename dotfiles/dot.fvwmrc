@@ -45,6 +45,8 @@ AddToMenu CommandMenu "Command Menu"  Title
 +	"Restart fvwm"		Restart fvwm
 +       "Start cwm"             Restart cwm
 +	"Lock Screen"		exec xlock &
++ 	"Hibernate (ZZZ)"	FvwmForm HibernateVerify
++ 	"Suspend (zzz)"		FvwmForm SuspendVerify
 + 	"Reboot"		FvwmForm RebootVerify
 + 	"Shutdown"		FvwmForm ShutdownVerify
 + 	"Logout"		FvwmForm QuitVerify
@@ -154,7 +156,31 @@ Mouse 2 	FST     A       Menu Window-Ops Nop
 #Mouse 3 	TSIF    A       RaiseLower
 
 ############################################################################
-# "are you sure?" for logout, reboot, and shutdown
+# "are you sure?" for hibernate, suspend, logout, reboot, and shutdown
+
+*HibernateVerifyGrabServer
+*HibernateVerifyWarpPointer
+*HibernateVerifyCommand  Beep
+*HibernateVerifyLine          center
+*HibernateVerifyText          "Do you really want to hibernate?"
+*HibernateVerifyLine          expand
+*HibernateVerifyButton   quit      "Hibernate"  ^M
+*HibernateVerifyCommand  exec ZZZ
+*HibernateVerifyButton   quit      "Cancel"  ^[
+*HibernateVerifyCommand  Nop
+Style "HibernateVerify" NoTitle, NoHandles, BorderWidth 3
+
+*SuspendVerifyGrabServer
+*SuspendVerifyWarpPointer
+*SuspendVerifyCommand  Beep
+*SuspendVerifyLine          center
+*SuspendVerifyText          "Do you really want to suspend?"
+*SuspendVerifyLine          expand
+*SuspendVerifyButton   quit      "Suspend"  ^M
+*SuspendVerifyCommand  exec zzz
+*SuspendVerifyButton   quit      "Cancel"  ^[
+*SuspendVerifyCommand  Nop
+Style "SuspendVerify" NoTitle, NoHandles, BorderWidth 3
 
 *QuitVerifyGrabServer
 *QuitVerifyWarpPointer

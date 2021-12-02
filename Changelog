@@ -1,3 +1,6 @@
+Version 1.5.0 2021-12-02
+	- added left mouse menu entries for hibernate (ZZZ) and suspend (zzz)
+
 Version 1.4.0 2020-04-06
 	- Completed TODO item: added a panel for battery percentage remaining and battery minutes remaining, as reported by the apm command.
 
