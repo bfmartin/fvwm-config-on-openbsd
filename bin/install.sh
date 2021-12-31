@@ -8,16 +8,16 @@ ME="$(readlink -f "$0")"
 DIR="$(dirname "$(dirname "$ME")")/dotfiles"
 
 # are we sure?
-if [ $# -gt 0 -a "y$1" = 'y-y' ]; then
+if [ $# -gt 0 ] && [ "y$1" = 'y-y' ]; then
 
   # sure
   echo installing:
-  echo install         $DIR/dot.fvwmrc    ~/.fvwmrc
-       install         $DIR/dot.fvwmrc    ~/.fvwmrc
-  echo install         $DIR/dot.Xdefaults ~/.Xdefaults
-       install         $DIR/dot.Xdefaults ~/.Xdefaults
-  echo install -m 0755 $DIR/dot.xsession  ~/.xsession
-       install -m 0755 $DIR/dot.xsession  ~/.xsession
+  echo install         "$DIR"/dot.fvwmrc    ~/.fvwmrc
+       install         "$DIR"/dot.fvwmrc    ~/.fvwmrc
+  echo install         "$DIR"/dot.Xdefaults ~/.Xdefaults
+       install         "$DIR"/dot.Xdefaults ~/.Xdefaults
+  echo install -m 0755 "$DIR"/dot.xsession  ~/.xsession
+       install -m 0755 "$DIR"/dot.xsession  ~/.xsession
 
 else
 
