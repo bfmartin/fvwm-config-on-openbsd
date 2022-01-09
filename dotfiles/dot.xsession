@@ -24,4 +24,6 @@ xsetroot -solid black
 
 # programs to startup
 xterm &
-fvwm
+
+# set the character set to prevent xclock giving warning in .xsession-errors
+LC_CTYPE=C fvwm
