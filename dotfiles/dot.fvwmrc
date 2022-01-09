@@ -256,12 +256,14 @@ Style "*" RandomPlacement
 # window styles
 Style "Fvwm*"		NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 0
 
+# draw the three buttons at the top right of windows (close, maximise,
+# minimise) using vectors
 # close button, top right
-AddButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+ButtonStyle 2 Vector 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
 # maximise button, to the left of close button
-AddButtonStyle 4 Vector 4 50x25@1 75x75@0 25x75@0 50x25@1
+ButtonStyle 4 Vector 4 50x25@1 75x75@0 25x75@0 50x25@1
 # minimise button, to the left of the maximise button
-AddButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 50x75@0
+ButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 50x75@0
 
 # make everything line up (snap) with each other. number is pixels proximity
 SnapAttraction 10
