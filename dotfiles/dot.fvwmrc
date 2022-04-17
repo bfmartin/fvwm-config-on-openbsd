@@ -6,11 +6,13 @@
 
 # commented out for now as they aren't being used
 # IconPath        /usr/X11R6/include/X11/bitmaps
-# PixmapPath      /usr/X11R6/include/X11/pixmaps
 
-# FvwmButtons
+# FvwmButtons. This is the set of information displays on the lower right
+# corner of the screen. only the Pager (on the far right) has
+# clickable functionality
 
-# start FvwmButtons and restart them
+# initialize functions for starting FvwmButtons and restarting them
+# these are executed at startup and at restart of fvwm buttons
 AddToFunc "InitFunction" "I" Module FvwmButtons
 +		"I" Next [!iconic CurrentScreen xterm] Focus
 +		"I" CursorMove 30 40
@@ -19,22 +21,25 @@ AddToFunc "RestartFunction" "I" Module FvwmButtons
 +		"I" Next [!iconic CurrentScreen xterm] Focus
 +		"I" CursorMove 30 40
 
+# properties of the buttons
 *FvwmButtonsFore Black
 *FvwmButtonsBack SteelBlue3
 *FvwmButtonsFont -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
 *FvwmButtonsGeometry 400x50-0-0
 *FvwmButtonsRows 1
 
+# define the programs executed by the buttons
 *FvwmButtons(Swallow XClock 'Exec xclock -padding 0 -fg white -bg SteelBlue3 &')
 *FvwmButtons(Swallow(UseOld,NoKill) "xload" `Exec xload -title xload -bg SteelBlue3 -update 3 -nolabel &`)
 *FvwmButtons(Swallow swallow 'Exec xterm -font -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1 -title swallow +sb -bg SteelBlue3 -e "tput civis; while true; do echo -n Bat:; apm -l | perl -pe chomp ; echo \%; echo -n Min:; apm -m | perl -pe chomp; sleep 5; clear; done" &')
 *FvwmButtons(1x1 Frame 0 Swallow(UseOld) "FvwmPager" "Module FvwmPager 0 1")
 
 ##############################################################################
-# Mouse menus
+# mouse menus
 #
+# mouse menus defined here. the menus are attached to the mouse buttons later
 
-# This is the command menu for the left mouse button
+# this is the command menu for the left mouse button
 AddToMenu CommandMenu "Command Menu"  Title
 +	"Xterm"			exec xterm &
 +	"Firefox"		exec firefox &
@@ -51,7 +56,7 @@ AddToMenu CommandMenu "Command Menu"  Title
 + 	"Shutdown"		FvwmForm ShutdownVerify
 + 	"Logout"		FvwmForm QuitVerify
 
-# Window operations for the centre mouse button
+# window operations for the centre mouse button
 AddToMenu Global-Window-Ops    "Window Ops"    Title
 +       "Move"          Move-or-Raise2
 +       "Resize"        Resize-or-Raise2
@@ -67,7 +72,7 @@ AddToMenu Global-Window-Ops    "Window Ops"    Title
 +       ""              Nop
 +       "Refresh Screen" Refresh
 
-# Window Ops for the top left of every window
+# window ops for the top left of every window
 AddToMenu Window-Ops   "Move"          Move-or-Raise
 +       "Resize"        Resize-or-Raise
 +       "Raise/Lower"   RaiseLower
@@ -78,6 +83,7 @@ AddToMenu Window-Ops   "Move"          Move-or-Raise
 +       "Close"         Close
 +       "Destroy"       Destroy
 
+# sub-menu for the command menu
 AddToMenu VolumeMenu  "Volume Control"  Title
 +       "Volume 100%%"          exec sndioctl -q output.level=1
 +       "Volume  90%%"          exec sndioctl -q output.level=0.9
@@ -94,6 +100,7 @@ AddToMenu VolumeMenu  "Volume Control"  Title
 ############################################################################
 # menus and mouse actions
 #
+# these are attached to mouse actions later
 
 # this is for the titlebar. double-click to maximise / minimise
 AddToFunc Move-or-Raise		"I" Raise
@@ -122,33 +129,33 @@ AddToFunc Iconify-and-Raise     "I" Iconify
 +                               "I" Raise
 
 ############################################################################
-# MOUSE Setup
+# mouse actions, depending on location
 #
 # root window:
-# - Left Mouse Button brings up the Command Menu
-# - Centre Mouse Button is the window operations list
-# - Right Mouse Button is a window list
+# - left mouse button brings up the command menu
+# - centre mouse button is the window operations list
+# - right mouse button is a window list
 #     Button	Context Modifi 	Function
 Mouse 1		R   	A       Menu CommandMenu Nop
 Mouse 2		R    	A       Menu Global-Window-Ops Nop
 Mouse 3		R    	A      	WindowList
 
-# Now, title bar buttons
-# Left is menu, right is minimise, maximise, close
+# title bar buttons
+# left is menu, right is minimise, maximise, close
 #     Button	Context Modifi 	Function
 Mouse 0		1       A       Menu Window-Ops Close
 Mouse 0		2    	A     	Close
 Mouse 0		4    	A     	Maximize-Func
 Mouse 0		6    	A     	Iconify
 
-# Button 1 in Frame or Sides is a resize-or-raise, in Icons is a move or 
-# de-iconify, and on Top does a move-or-raise
+# button 1 in frame or sides is a resize-or-raise, in icons is a move or
+# de-iconify, and on top does a move-or-raise
 #     Button	Context Modifi 	Function
 Mouse 1 	FS      A       Resize-or-Raise
 Mouse 1		I       A       Move-or-Iconify
 Mouse 1		T       A       Move-or-Raise
 
-# Button 2 in an Icon is de-iconify, in Corners/Sides/Titlebar gets Ops Menu
+# button 2 in an icon is de-iconify, in Corners/Sides/Titlebar gets Ops Menu
 #     Button	Context Modifi 	Function
 #Mouse 2 	I       A       Iconify
 Mouse 2 	FST     A       Menu Window-Ops Nop
@@ -219,7 +226,7 @@ Style "RebootVerify" NoTitle, NoHandles, BorderWidth 3
 Style "ShutdownVerify" NoTitle, NoHandles, BorderWidth 3
 
 ############################################################################
-# COLORS and FONTS and Styles
+# colors and fonts and styles
 #
 # window in focus
 HilightColor		linen Red3
@@ -234,7 +241,7 @@ IconFont                -adobe-helvetica-bold-r-*-*-18-*-*-*-*-*-*-*
 # icons go in bottom left
 Style "*" IconBox 0 1030 750 1550
 
-# Keep the last focus while in root window
+# keep the last focus while in root window
 Style "*" SloppyFocus
 
 # windows auto-raise after these many milliseconds
@@ -243,13 +250,16 @@ Module FvwmAuto 300
 # down and up in less than these milliseconds to be considered a click
 ClickTime 250
 
-# opaque moves
+# opaque moves. 100 means all windows (ie, up to 100% of screen size) are
+# moved opaquely.
 OpaqueMoveSize 100
 
-# Suppress the pager 
+# suppress the pager. desktop sizes are the same as the virtual desktop size
 DeskTopSize 1 1
 
-# window placement
+# window placement. use smart placement when available, ie, no overlap other
+# windows. if smart placement is not available, then use random placement as
+# a fallback
 Style "*" SmartPlacement
 Style "*" RandomPlacement
 
@@ -265,9 +275,16 @@ ButtonStyle 4 Vector 4 50x25@1 75x75@0 25x75@0 50x25@1
 # minimise button, to the left of the maximise button
 ButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 50x75@0
 
+# alternatively, use bitmaps instead of vectors:
+#
+# ImagePath      /usr/X11R6/include/X11/pixmaps
+# AddButtonStyle 2 Pixmap button-close.xpm
+# AddButtonStyle 4 Pixmap button-max.xpm
+# AddButtonStyle 6 Pixmap button-horiz.xpm
+
 # make everything line up (snap) with each other. number is pixels proximity
 SnapAttraction 10
-# only snap windows:
+# or, use this to only snap windows:
 # SnapAttraction 10 Windows
 
 # alt-tabbing
