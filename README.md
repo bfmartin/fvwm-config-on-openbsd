@@ -40,7 +40,7 @@ Feedback on this new feature is appreciated. It's been tested on my two laptops 
 
 ## Requirements
 
-OpenBSD 7.2 and its bundled FVWM. This was developed on OpenBSD/amd64 6.0 (and later) and FVWM version 2.2.5. Other versions may work as well.
+OpenBSD 7.3 and its bundled FVWM. This was developed on OpenBSD/amd64 6.0 (and later) and FVWM version 2.2.5. Other versions may work as well.
 
 No additional software beyond the base installation is required.
 
