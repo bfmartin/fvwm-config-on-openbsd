@@ -32,15 +32,9 @@ After finally getting a laptop that OpenBSD supports, I wanted a good desktop wi
 
   * Starts the xidle command, which locks the screen after 10 minutes of inactivity.
 
-### Battery Status
-
-A new battery status indicator was added on 2020-07-06. The indicator shows percentage remaining and minutes remaining, as reported by the apm command. If the battery is not present, it shows 'unknown'.
-
-Feedback on this new feature is appreciated. It's been tested on my two laptops with different screen resolutions.
-
 ## Requirements
 
-OpenBSD 7.5 and its bundled FVWM. This was developed on OpenBSD/amd64 6.0 (and later) and FVWM version 2.2.5. Other versions may work as well.
+OpenBSD 7.6 and its bundled FVWM. This was developed on OpenBSD/amd64 6.0 (and later) and FVWM version 2.2.5. Other versions may work as well.
 
 No additional software beyond the base installation is required.
 
